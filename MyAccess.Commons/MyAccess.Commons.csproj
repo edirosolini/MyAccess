@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<Authors>Ezequiel Di Rosolini</Authors>
+		<Company>El Roso</Company>
+		<DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+		<NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="stylecop.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AdditionalFiles Include="stylecop.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+</Project>
