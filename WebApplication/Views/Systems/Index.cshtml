@@ -1,0 +1,56 @@
+﻿@model MyAccess.Domains.Models.ListModel<MyAccess.Domains.Entities.SystemEntity>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Systems";
+}
+
+<div class="text-right">
+    <a href="@Url.Action("Create", "Systems")" class="btn btn-secondary btn-circle">
+        <i class="fas fa-plus"></i>
+    </a>
+</div>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="dataTable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th />
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th />
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model.Records)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Update", "Systems", new { id = item.Id })" class="btn btn-warning btn-circle">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+
+                                <a href="@Url.Action("Remove", "Systems", new { id = item.Id })" class="btn btn-danger btn-circle">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

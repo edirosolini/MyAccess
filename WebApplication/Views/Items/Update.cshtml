@@ -1,0 +1,40 @@
+﻿@model MyAccess.Domains.Entities.ItemEntity
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Items";
+}
+
+@using (@Html.BeginForm("Update", "Items", FormMethod.Post, new { @class = "user" }))
+{
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            @Html.DropDownListFor(model => model.SystemId, new SelectList(ViewBag.Systems, "Id", "Name"), "--Select system--", new { @class = "form-control", @placeholder = Html.DisplayNameFor(x => x.System) })
+            @Html.ValidationMessageFor(model => model.SystemId, "", htmlAttributes: new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            @Html.DropDownListFor(model => model.TypeId, new SelectList(ViewBag.Types, "Id", "Name"), "--Select type--", new { @class = "form-control", @placeholder = Html.DisplayNameFor(x => x.Type) })
+            @Html.ValidationMessageFor(model => model.TypeId, "", htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            @Html.TextBoxFor(model => model.Name, htmlAttributes: new { @type = "text", @class = "form-control form-control-user", @placeholder = Html.DisplayNameFor(x => x.Name) })
+            @Html.ValidationMessageFor(model => model.Name, "", htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-user btn-block">Register System</button>
+
+    <hr>
+
+    <div class="text-center">
+        <a href="@Url.Action("Index", "Items")" class="btn btn-danger">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+    </div>
+}

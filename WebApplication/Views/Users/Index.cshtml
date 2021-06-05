@@ -1,0 +1,66 @@
+﻿@model MyAccess.Domains.Models.ListModel<MyAccess.Domains.Entities.UserEntity>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<div class="text-right">
+    <a href="@Url.Action("Create", "Users")" class="btn btn-secondary btn-circle">
+        <i class="fas fa-user-plus"></i>
+    </a>
+</div>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="dataTable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Email Address</th>
+                        <th />
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Email Address</th>
+                        <th />
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model.Records)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FirstName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmailAddress)
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Update", "Users", new { id = item.Id })" class="btn btn-warning btn-circle">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+
+                                <a href="@Url.Action("Remove", "Users", new { id = item.Id })" class="btn btn-danger btn-circle">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:47891",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "CONNECTION_STRING": "Data Source=(local);Initial Catalog=MyAccess;User ID=sa;Password=123@Password",
+        "URI_MyMail": "http://localhost:7000",
+        "SIGNING_KEY": "StrONGKAutHENTICATIONKEy",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "MyAccess.WebApplication": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "CONNECTION_STRING": "Data Source=(local);Initial Catalog=MyAccess;User ID=sa;Password=123@Password",
+        "URI_MyMail": "http://localhost:7000",
+        "SIGNING_KEY": "StrONGKAutHENTICATIONKEy",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": "true",
+      "applicationUrl": "http://localhost:5000"
+    }
+  }
+}

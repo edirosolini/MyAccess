@@ -1,0 +1,49 @@
+﻿@model MyAccess.Domains.Entities.UserEntity
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+@using (@Html.BeginForm("Create", "Users", FormMethod.Post, new { @class = "user" }))
+{
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            @Html.TextBoxFor(model => model.LastName, htmlAttributes: new { @type = "text", @class = "form-control form-control-user", @placeholder = Html.DisplayNameFor(x => x.LastName) })
+            @Html.ValidationMessageFor(model => model.LastName, "", htmlAttributes: new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-6">
+            @Html.TextBoxFor(model => model.FirstName, htmlAttributes: new { @type = "text", @class = "form-control form-control-user", @placeholder = Html.DisplayNameFor(x => x.FirstName) })
+            @Html.ValidationMessageFor(model => model.FirstName, "", htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.EmailAddress, htmlAttributes: new { @type = "email", @class = "form-control form-control-user", @placeholder = Html.DisplayNameFor(x => x.EmailAddress) })
+        @Html.ValidationMessageFor(model => model.EmailAddress, "", htmlAttributes: new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            @Html.TextBoxFor(model => model.Password, htmlAttributes: new { @type = "password", @class = "form-control form-control-user", @placeholder = Html.DisplayNameFor(x => x.Password) })
+            @Html.ValidationMessageFor(model => model.Password, "", htmlAttributes: new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-6">
+            @*@Html.TextBoxFor(model => model.Password, htmlAttributes: new { @type = "password", @class = "form-control form-control-user", @placeholder = Html.DisplayNameFor(x => x.Password) })
+                @Html.ValidationMessageFor(model => model.Password)*@
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-user btn-block">Register Account</button>
+
+    <hr>
+
+    <div class="text-center">
+        <a href="@Url.Action("Index", "Users")" class="btn btn-danger">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+    </div>
+}

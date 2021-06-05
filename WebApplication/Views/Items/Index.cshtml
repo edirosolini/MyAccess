@@ -1,0 +1,66 @@
+﻿@model MyAccess.Domains.Models.ListModel<MyAccess.Domains.Entities.ItemEntity>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Items";
+}
+
+<div class="text-right">
+    <a href="@Url.Action("Create", "Items")" class="btn btn-secondary btn-circle">
+        <i class="fas fa-plus"></i>
+    </a>
+</div>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="dataTable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>System</th>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th />
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>System</th>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th />
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model.Records)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.System.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Type.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Update", "Items", new { id = item.Id })" class="btn btn-warning btn-circle">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+
+                                <a href="@Url.Action("Remove", "Items", new { id = item.Id })" class="btn btn-danger btn-circle">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

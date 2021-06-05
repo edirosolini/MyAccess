@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyAccess.Providers</name>
+    </assembly>
+    <members>
+        <member name="T:MyAccess.Providers.Migrations.CreateTableUsers">
+            <summary>
+            Documentation of CreateTableUsers.
+            </summary>
+        </member>
+        <member name="T:MyAccess.Providers.Migrations.CreateTableSystems">
+            <summary>
+            Documentation of CreateTableSystems.
+            </summary>
+        </member>
+        <member name="T:MyAccess.Providers.Migrations.CreateTableTypes">
+            <summary>
+            Documentation of CreateTableTypes.
+            </summary>
+        </member>
+        <member name="T:MyAccess.Providers.Migrations.CreateTableItems">
+            <summary>
+            Documentation of CreateTableItems.
+            </summary>
+        </member>
+        <member name="T:MyAccess.Providers.Migrations.CreateTableUsersItems">
+            <summary>
+            Documentation of CreateTableUsersItems.
+            </summary>
+        </member>
+        <member name="T:MyAccess.Providers.Migrations.InsertData">
+            <summary>
+            Documentation of InsertData.
+            </summary>
+        </member>
+    </members>
+</doc>

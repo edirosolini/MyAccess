@@ -8,6 +8,10 @@ foreach ($dir in $dirs)
 
 $myBuildNumber = $(get-date).ToString("yyyy.MM.dd.HHmm");
 
-dotnet publish .\MyAccess.Web\MyAccess.Web.csproj /property:Version=$myBuildNumber --output Output
+dotnet restore
+
+dotnet build /property:Version=$myBuildNumber --no-restore
+
+dotnet publish .\WebApplication\MyAccess.WebApplication.csproj /property:Version=$myBuildNumber --no-restore --output Output
 
 pause
